@@ -8,16 +8,25 @@ exports.index = (req, res) => {
 };
 
 exports.login = async (req, res) => {
-    const answer = await userCheck.checkUser(req.body.username);
-    console.log('4' + req.body.username);
-    console.log('5' + answer);
+    
 
-    if (answer == true) {
-        res.send('You are loged in.');
-        console.log('Is logged in');
-    }
-    else {
-        res.sendfile('public/home.html');
-        console.log('Is not logged in');
-    }
+    const second = (answer) => {
+        console.log('4' + req.body.username);
+        console.log('5' + answer);
+
+
+
+        if (answer == true) {
+            res.send('You are loged in.');
+            console.log('Is logged in');
+        }
+        else {
+            res.sendfile('public/home.html');
+            console.log('Is not logged in');
+        }
+    };
+
+    userCheck.checkUser(req.body.username, second);
+
+    
 }

@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 // Creation funktion
-const checkUser = (User) => {
+const checkUser = (User, callback) => {
     // Return value 
     let svar = false;
 
@@ -29,9 +29,12 @@ const checkUser = (User) => {
                 svar = true;
             };
         });
-        return svar;
+        console.log('3,Ending compare');
+        callback(svar);
     });
-    console.log('3,Ending compare');
+    
+
+
 
 
     // Returning false if user is not in data 
