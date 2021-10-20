@@ -7,6 +7,8 @@ const indexRouter = require('./routes/indexRoute');
 
 const port = 8089;
 
+app.use(express.urlencoded());
+
 app.use(express.static('public'));
 
 app.use('/', indexRouter);
