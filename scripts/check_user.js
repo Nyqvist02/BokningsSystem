@@ -7,7 +7,7 @@ const checkUser = (User, callback) => {
     // Return value 
     let svar = false;
 
-    console.log('1,Starting compare');
+    // console.log('1,Starting compare');
     // Reding Data
     fs.readFile('./Data/users.json', 'utf-8', (err, data) => {
         if (err) {
@@ -20,7 +20,7 @@ const checkUser = (User, callback) => {
         // Formating data
         const Duck = JSON.parse(data);
         
-        console.log('2,comparing');
+        // console.log('2,comparing');
 
         // comparing 
         Duck.users.forEach(person => {
@@ -29,7 +29,7 @@ const checkUser = (User, callback) => {
                 svar = true;
             };
         });
-        console.log('3,Ending compare');
+        // console.log('3,Ending compare');
         callback(svar);
     });
     
