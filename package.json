@@ -1,5 +1,5 @@
 {
-  "name": "web-application-acme-car-dealership",
+  "name": "bokningssystem",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,8 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kasiem024/WebAppTemplate.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kasiem024/WebAppTemplate/issues"
+  },
+  "homepage": "https://github.com/Kasiem024/WebAppTemplate#readme",
   "dependencies": {
     "express": "^4.17.1"
   }

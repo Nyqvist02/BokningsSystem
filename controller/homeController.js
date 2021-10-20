@@ -1,5 +1,5 @@
 'use strict';
 
 exports.index = (req, res) => {
-    res.sendfile('public/index.html');
+    res.sendfile('public/home.html');
 };

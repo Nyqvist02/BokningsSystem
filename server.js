@@ -5,7 +5,7 @@ const app = express();
 
 const indexRouter = require('./routes/indexRoute');
 
-const port = 8042;
+const port = 8089;
 
 app.use(express.static('public'));
 
