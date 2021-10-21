@@ -14,7 +14,7 @@ exports.login = (req, res) => {
         // console.log('5' + answer);
 
         if (answer == true) {
-            res.send('You are logged in.');
+            res.sendfile('public/boka.html');
             console.log('Is logged in');
 
         }
