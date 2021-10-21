@@ -1,14 +1,13 @@
 'use strict';
 
-const userCheck = require('../scripts/check_user.js');
+const userCheckFile = require('../scripts/check_user.js');
 
 
 exports.index = (req, res) => {
     res.sendfile('public/home.html');
 };
 
-exports.login = async (req, res) => {
-    
+exports.login = (req, res) => {
 
     const second = (answer) => {
         // console.log('4' + req.body.username);
@@ -17,6 +16,7 @@ exports.login = async (req, res) => {
         if (answer == true) {
             res.send('You are logged in.');
             console.log('Is logged in');
+
         }
         else {
             res.sendfile('public/home.html');
@@ -24,5 +24,5 @@ exports.login = async (req, res) => {
         }
     };
     
-    userCheck.checkUser(req.body.username, second);   
+    userCheckFile.checkUser(req.body.username, second);
 }

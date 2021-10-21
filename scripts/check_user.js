@@ -19,7 +19,7 @@ const checkUser = (User, callback) => {
 
         // Formating data
         const Duck = JSON.parse(data);
-        
+
         // console.log('2,comparing');
 
         // comparing 
@@ -27,19 +27,17 @@ const checkUser = (User, callback) => {
             if (person == User) {
                 // console.log('Found: ' + User);
                 svar = true;
+
+                
             };
         });
         // console.log('3,Ending compare');
         callback(svar);
     });
-    
-
-
-
 
     // Returning false if user is not in data 
     // If in data return true
-    
+
 };
 
 module.exports = {
