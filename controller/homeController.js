@@ -28,9 +28,16 @@ exports.login = (req, res) => {
 }
 
 exports.boka = (req, res) => {
+
+    const sendBokaRes = () => {
+        res.send();
+    }
+
     console.log(req.query.dag);
     console.log(req.query.tid);
     console.log(req.query.token);
-    dataUpdate.update(req.query.dag, req.query.tid, req.query.token);
-    res.send();
+    dataUpdate.update(req.query.dag, req.query.tid, req.query.token, sendBokaRes);
+
+
+    
 }

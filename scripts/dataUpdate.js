@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-exports.update = (dag, tid, token) =>{
+exports.update = (dag, tid, token, callback) =>{
     
 
 
@@ -22,5 +22,8 @@ exports.update = (dag, tid, token) =>{
             if (err) throw err;
             console.log('File has been updated!');
         });
+
+        callback();
+
     });
 }
