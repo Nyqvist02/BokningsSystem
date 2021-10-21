@@ -33,9 +33,9 @@ exports.boka = (req, res) => {
         res.send();
     }
 
-    console.log(req.query.dag);
-    console.log(req.query.tid);
-    console.log(req.query.token);
+    // console.log(req.query.dag);
+    // console.log(req.query.tid);
+    // console.log(req.query.token);
     dataUpdate.update(req.query.dag, req.query.tid, req.query.token, sendBokaRes);
 
 

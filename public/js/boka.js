@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('Hi');
-
 const getTiderFile = () => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '/js/tider.json');
@@ -53,7 +51,13 @@ const getTiderFile = () => {
                         const knapp = document.createElement('button')
                         knapp.id = 'dag=' + i + '&tid=' + j;
                         knapp.className = 'button btn-success p-2';
+
                         knapp.textContent = 'Bokad';
+
+                        knapp.addEventListener('click', avboka);
+
+
+
                         document.getElementById('content' + i).appendChild(knapp);
         
                     } else {
@@ -78,6 +82,26 @@ const getTiderFile = () => {
 const boka = (event) => {
     const id = event.target.id;
     const token = 'token=' + document.cookie;
+    const url = '/boka/?' + id + '&' + token;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+
+    xhr.onload = () => {
+        const schemaTag = document.getElementById('schema')
+
+        while(schemaTag.firstChild){
+            schemaTag.removeChild(schemaTag.lastChild);
+        }
+
+        getTiderFile();
+    }
+
+}
+
+const avboka = (event) => {
+    const id = event.target.id;
+    const token = 'token=' + 'ej bokad';
     const url = '/boka/?' + id + '&' + token;
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
