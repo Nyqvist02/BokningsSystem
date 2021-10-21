@@ -8,13 +8,11 @@ xhr.send();
 
 
 xhr.onload = () => {
-    console.log('Hi');
     const dataTider = xhr.response;
 
     document.getElementById('welcomeTitle').textContent = 'Välkommen ' + document.cookie;
 
     for (let i = 0; i < dataTider.vecka.length; i++) {
-        console.log('Hi Cool');
         const dag = document.createElement('dl'); //Lägger till Dag "row"
         dag.id = 'dag' + i;
         dag.className = 'd-flex flex-row justify-content-center';
@@ -30,18 +28,22 @@ xhr.onload = () => {
         dagContent.className = 'col-6';
         document.getElementById('dag' + i).appendChild(dagContent);
 
-        for (let j = 0; j < dataTider.vecka[i].length; j++) {
+        for (let j = 0; j < dataTider.vecka[i].length; j++) { //Lägger till knapparna baserat på tider.json värdena
             if (dataTider.vecka[i][j] == 'ej bokad') {
 
                 const knapp = document.createElement('button')
-                knapp.id = i + '-' + j;
+                knapp.id = 'dag=' + i + '&tid=' + j;
                 knapp.className = 'button btn-primary p-2';
                 knapp.textContent = 'Ledig';
+
+                knapp.addEventListener('click', boka);
+
                 document.getElementById('content' + i).appendChild(knapp);
+
             } else if (dataTider.vecka[i][j] == document.cookie) {
 
                 const knapp = document.createElement('button')
-                knapp.id = i + '-' + j;
+                knapp.id = 'dag=' + i + '&tid=' + j;
                 knapp.className = 'button btn-success p-2';
                 knapp.textContent = 'Bokad';
                 document.getElementById('content' + i).appendChild(knapp);
@@ -49,11 +51,22 @@ xhr.onload = () => {
             } else {
 
                 const knapp = document.createElement('button')
-                knapp.id = i + '-' + j;
+                knapp.id = 'dag=' + i + '&tid=' + j;
                 knapp.className = 'button btn-warning p-2';
                 knapp.textContent = 'Ej Ledig';
                 document.getElementById('content' + i).appendChild(knapp);
             }
         }
     }
+}
+
+const boka = (event) => {
+    const id = event.target.id;
+    const token = 'token=' + document.cookie;
+    const url = '/boka/?' + id + '&' + token;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+
+    
 }

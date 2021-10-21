@@ -1,7 +1,7 @@
 'use strict';
 
 const userCheckFile = require('../scripts/check_user.js');
-
+const dataUpdate = require('../scripts/dataUpdate.js');
 
 exports.index = (req, res) => {
     res.sendfile('public/home.html');
@@ -25,4 +25,12 @@ exports.login = (req, res) => {
     };
     
     userCheckFile.checkUser(req.body.username, second);
+}
+
+exports.boka = (req, res) => {
+    console.log(req.query.dag);
+    console.log(req.query.tid);
+    console.log(req.query.token);
+    dataUpdate.update(req.query.dag, req.query.tid, req.query.token);
+    res.send();
 }
