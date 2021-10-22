@@ -17,4 +17,4 @@ Caution, dont click to fast, or the bug monster will show itself.
 
 ### DISCLAIMER
 
-Variables and filenames written in Swedish and English, viewer discretion is advised
+Variables and filenames written in both Swedish and English, viewer discretion is advised
