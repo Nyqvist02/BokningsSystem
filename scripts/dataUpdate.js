@@ -14,7 +14,7 @@ exports.update = (dag, tid, token, callback) =>{
         
         let Duck = JSON.parse(data);
 
-        Duck.vecka[dag][tid] = token;
+        Duck.vecka[dag].times[tid].bokad = token;
 
         const DuckJson = JSON.stringify(Duck);
 

@@ -26,14 +26,18 @@ const getTiderFile = () => {
             dagContent.className = 'row justify-content-start';
             document.getElementById("schema").appendChild(dagContent);
 
-            for(let i = 0; i < 5; i++){
+            const extraTid = document.createElement('h4'); //Lägger till de 4 olika tider möjliga för bokning
+            extraTid.className = "col-2 text-center";
+            document.getElementById("tiderTitel").appendChild(extraTid);
+
+            for(let i = 0; i < dataTider.vecka[0].times.length; i++){
                 const tiderCols = document.createElement('h4'); //Lägger till de 4 olika tider möjliga för bokning
                 tiderCols.className = "col-2 text-center";
-                tiderCols.textContent = dataTider.vecka[6][i];
+                tiderCols.textContent = dataTider.vecka[0].times[i].time;
                 document.getElementById("tiderTitel").appendChild(tiderCols);
             }
             
-            for (let i = 0; i < dataTider.vecka.length - 2; i++) {
+            for (let i = 0; i < dataTider.vecka.length; i++) {
                 // const dag = document.createElement('dl'); //Lägger till Dag "row"
                 // dag.id = 'dag' + i;
                 // dag.className = 'd-flex-row justify-content-start';
@@ -52,16 +56,16 @@ const getTiderFile = () => {
                 const rowTitel = document.createElement('p'); //Lägger till dagtitel med data från tider.json (se fil)
                 // rowTitel.id = "dag" + i;
                 rowTitel.className = "col-2 p-2 text-center";
-                rowTitel.textContent = dataTider.vecka[5][i];
+                rowTitel.textContent = dataTider.vecka[i].day;
                 document.getElementById('content' + i).appendChild(rowTitel);
 
 
         
-                for (let j = 0; j < dataTider.vecka[i].length; j++) { //Lägger till knapparna baserat på tider.json värdena
+                for (let j = 0; j < dataTider.vecka[i].times.length; j++) { //Lägger till knapparna baserat på tider.json värdena
 
 
 
-                    if (dataTider.vecka[i][j] == 'ej bokad') {
+                    if (dataTider.vecka[i].times[j].bokad == 'ej bokad') {
         
                         const knapp = document.createElement('button')
                         knapp.id = 'dag=' + i + '&tid=' + j;
@@ -72,7 +76,7 @@ const getTiderFile = () => {
         
                         document.getElementById('content' + i).appendChild(knapp);
         
-                    } else if (dataTider.vecka[i][j] == document.cookie) {
+                    } else if (dataTider.vecka[i].times[j].bokad == document.cookie) {
         
                         const knapp = document.createElement('button')
                         knapp.id = 'dag=' + i + '&tid=' + j;

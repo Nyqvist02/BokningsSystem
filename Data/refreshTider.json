@@ -1,46 +1,103 @@
-{"vecka":[
-    [
-        "ej bokad",
-        "ej bokad",
-        "ej bokad",
-        "ej bokad"
-    ],
-    [
-        "ej bokad",
-        "ej bokad",
-        "ej bokad",
-        "ej bokad"
-    ],
-    [
-        "ej bokad",
-        "ej bokad",
-        "ej bokad",
-        "ej bokad"
-    ],
-    [
-        "ej bokad",
-        "ej bokad",
-        "ej bokad",
-        "ej bokad"
-    ],
-    [
-        "ej bokad",
-        "ej bokad",
-        "ej bokad",
-        "ej bokad"
-    ],
-    [
-        "Måndag",
-        "Tisdag",
-        "Onsdag",
-        "Torsdag",
-        "Fredag"
-    ],
-    [
-        "",
-        "08.00-11.30",
-        "12.00-15.30",
-        "16.00-19.30",
-        "20.00-23.30"
+{
+    "vecka": [{
+            "day": "Måndag",
+            "times": [{
+                    "time": "08.00-11.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "12.00-15.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "16.00-19.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "20.00-23.30",
+                    "bokad": "ej bokad"
+                }
+            ]
+        },
+        {
+            "day": "Tisdag",
+            "times": [{
+                    "time": "08.00-11.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "12.00-15.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "16.00-19.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "20.00-23.30",
+                    "bokad": "ej bokad"
+                }
+            ]
+        },
+        {
+            "day": "Onsdag",
+            "times": [{
+                    "time": "08.00-11.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "12.00-15.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "16.00-19.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "20.00-23.30",
+                    "bokad": "ej bokad"
+                }
+            ]
+        },
+        {
+            "day": "Torsdag",
+            "times": [{
+                    "time": "08.00-11.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "12.00-15.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "16.00-19.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "20.00-23.30",
+                    "bokad": "ej bokad"
+                }
+            ]
+        },
+        {
+            "day": "Fredag",
+            "times": [{
+                    "time": "08.00-11.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "12.00-15.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "16.00-19.30",
+                    "bokad": "ej bokad"
+                },
+                {
+                    "time": "20.00-23.30",
+                    "bokad": "ej bokad"
+                }
+            ]
+        }
     ]
-]} 
+}
