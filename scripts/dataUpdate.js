@@ -20,7 +20,7 @@ exports.update = (dag, tid, token, callback) =>{
 
         fs.writeFile('./public/js/tider.json', DuckJson, (err) =>{
             if (err) throw err;
-            console.log('File has been updated!');
+            // console.log('File has been updated!');
         });
 
         callback();
